@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiara Vicencio — Cybersecurity Professional</title>
+<link rel="icon" type="image/x-icon" href="https://www.reddit.com/r/SonicTheHedgehog/comments/1n5mzpg/this_almost_made_me_lose_my_mind/">
+<meta name="description" content="Kiara Marie Vicencio — Cybersecurity analyst specialising in attack surface management, risk analysis, and cybersecurity. Based in the Philippines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: #080b0f;
+  color: #d4cfc8;
+  line-height: 1.6;
+  cursor: none;
+  overflow-x: hidden;
+}
+
+/* ── CUSTOM CURSOR ─────────────────────────────────── */
+.cursor {
+  width: 8px; height: 8px;
+  background: #5fffd4;
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+  mix-blend-mode: screen;
+}
+.cursor-ring {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(95, 255, 212, 0.35);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease, width 0.2s ease, height 0.2s ease;
+}
+body:has(a:hover) .cursor { width: 14px; height: 14px; background: #5fffd4; }
+body:has(a:hover) .cursor-ring { width: 48px; height: 48px; border-color: rgba(95,255,212,0.5); }
+
+/* ── NOISE OVERLAY ─────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── SCAN LINE ─────────────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── NAV ───────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(8,11,15,0.95), transparent);
+}
+.nav-logo {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #5fffd4;
+}
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: #5fffd4;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-links a:hover { color: #d4cfc8; }
+.nav-links a:hover::after { transform: scaleX(1); }
+
+/* ── HERO ──────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(120px, 22vw, 280px);
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(95, 255, 212, 0.06);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  animation: bgdrift 20s ease-in-out infinite;
+}
+@keyframes bgdrift {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -52%) scale(1.02); }
+}
+
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #5fffd4;
+  margin-bottom: 20px;
+  position: relative; z-index: 2;
+  opacity: 0;
+  animation: fadeup 0.8s ease forwards 0.2s;
+}
+
+.hero-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 12vw, 140px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  color: #f0ebe3;
+  position: relative; z-index: 2;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeup 0.9s ease forwards 0.35s;
+}
+.hero-name em {
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #5fffd4;
+}
+
+.hero-desc {
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #8a8278;
+  position: relative; z-index: 2;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeup 1s ease forwards 0.5s;
+}
+.hero-desc strong { color: #d4cfc8; font-weight: 500; }
+
+.hero-actions {
+  display: flex; gap: 16px; align-items: center;
+  position: relative; z-index: 2;
+  opacity: 0;
+  animation: fadeup 1s ease forwards 0.65s;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #5fffd4; color: #080b0f;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 14px 28px; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: #f0ebe3; transform: translateY(-2px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(95,255,212,0.3);
+  color: #5fffd4;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 14px 28px; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: #5fffd4; background: rgba(95,255,212,0.06); transform: translateY(-2px); }
+
+.hero-scroll {
+  position: absolute; right: 48px; bottom: 80px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeup 1s ease forwards 0.9s;
+}
+.hero-scroll span {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #3d4451; writing-mode: vertical-rl;
+}
+.scroll-line {
+  width: 1px; height: 60px;
+  background: linear-gradient(to bottom, #5fffd4, transparent);
+  animation: scrollpulse 2s ease-in-out infinite;
+}
+@keyframes scrollpulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.1); }
+}
+
+@keyframes fadeup {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── STATUS BAR ────────────────────────────────────── */
+.status-bar {
+  background: rgba(95, 255, 212, 0.04);
+  border-top: 1px solid rgba(95, 255, 212, 0.1);
+  border-bottom: 1px solid rgba(95, 255, 212, 0.1);
+  padding: 14px 48px;
+  display: flex; gap: 48px; align-items: center;
+  overflow: hidden;
+  position: relative; z-index: 2;
+}
+.status-item {
+  display: flex; align-items: center; gap: 10px;
+  white-space: nowrap;
+}
+.status-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #5fffd4;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+}
+.status-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #3d4451;
+}
+.status-val {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: #5fffd4;
+}
+
+/* ── SECTIONS ──────────────────────────────────────── */
+section { padding: 100px 48px; position: relative; z-index: 2; }
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #5fffd4; margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-label::before {
+  content: '';
+  width: 32px; height: 1px; background: #5fffd4;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1;
+  color: #f0ebe3;
+  margin-bottom: 48px;
+}
+
+/* ── ABOUT ─────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-text p {
+  font-size: 16px; line-height: 1.85; color: #8a8278;
+  margin-bottom: 20px;
+}
+.about-text p strong { color: #d4cfc8; font-weight: 500; }
+.about-text p em { color: #5fffd4; font-style: italic; }
+
+.about-facts {
+  display: flex; flex-direction: column; gap: 0;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.fact-row {
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.15s;
+}
+.fact-row:last-child { border-bottom: none; }
+.fact-row:hover { background: rgba(95, 255, 212, 0.03); }
+.fact-key {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #3d4451; padding: 16px 20px;
+  min-width: 120px; border-right: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center;
+}
+.fact-val {
+  font-size: 13px; color: #8a8278;
+  padding: 16px 20px;
+  display: flex; align-items: center;
+}
+.fact-val a {
+  color: #5fffd4; text-decoration: none;
+  transition: opacity 0.2s;
+}
+.fact-val a:hover { opacity: 0.7; }
+
+/* ── EXPERIENCE ────────────────────────────────────── */
+#experience { background: rgba(255,255,255,0.015); }
+
+.exp-list { display: flex; flex-direction: column; gap: 0; }
+.exp-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+.exp-item:last-child { border-bottom: none; }
+.exp-item::before {
+  content: '';
+  position: absolute; left: 196px; top: 0; bottom: 0;
+  width: 1px; background: rgba(255,255,255,0.06);
+}
+.exp-meta {}
+.exp-period {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #5fffd4; margin-bottom: 6px;
+}
+.exp-company {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; color: #3d4451;
+}
+.exp-role {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; letter-spacing: 0.02em;
+  color: #f0ebe3; margin-bottom: 16px;
+  line-height: 1.1;
+}
+.exp-body p {
+  font-size: 15px; line-height: 1.8; color: #8a8278;
+  margin-bottom: 16px;
+}
+.exp-tags {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px;
+}
+.exp-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #3d4451; border: 1px solid rgba(255,255,255,0.08);
+  padding: 4px 10px;
+  transition: all 0.2s;
+}
+.exp-tag:hover { border-color: rgba(95,255,212,0.3); color: #5fffd4; }
+.exp-highlight {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: #5fffd4;
+  border-left: 2px solid #5fffd4;
+  padding-left: 12px; margin-top: 12px;
+}
+
+/* ── SKILLS ────────────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+}
+.skill-block {
+  background: #080b0f;
+  padding: 36px 32px;
+  transition: background 0.2s;
+  position: relative; overflow: hidden;
+}
+.skill-block::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: #5fffd4;
+  transition: width 0.4s ease;
+}
+.skill-block:hover { background: rgba(95, 255, 212, 0.025); }
+.skill-block:hover::after { width: 100%; }
+.skill-cat {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: #5fffd4; margin-bottom: 16px;
+}
+.skill-items { display: flex; flex-direction: column; gap: 8px; }
+.skill-item {
+  font-size: 14px; color: #6b7280;
+  display: flex; align-items: center; gap: 8px;
+  transition: color 0.2s;
+}
+.skill-item::before {
+  content: '—';
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: #2a3040; flex-shrink: 0;
+}
+.skill-block:hover .skill-item { color: #8a8278; }
+
+/* ── CERTS ─────────────────────────────────────────── */
+#certifications { background: rgba(255,255,255,0.015); }
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.cert-card {
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 28px;
+  position: relative; overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.cert-card:hover {
+  border-color: rgba(95,255,212,0.25);
+  transform: translateY(-4px);
+}
+.cert-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #5fffd4, transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.cert-card:hover::before { opacity: 1; }
+.cert-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.cert-status.earned { color: #5fffd4; }
+.cert-status.progress { color: #e2a23a; }
+.cert-status.planned { color: #3d4451; }
+.cert-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.cert-name {
+  font-family: 'Lora', serif;
+  font-size: 16px; font-weight: 500;
+  color: #d4cfc8; margin-bottom: 6px; line-height: 1.3;
+}
+.cert-issuer {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: #3d4451;
+}
+
+/* ── DOMAIN LAB ────────────────────────────────────── */
+.domain-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.domain-terminal {
+  background: #0c1018;
+  border: 1px solid rgba(95, 255, 212, 0.12);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow: hidden;
+}
+.terminal-bar {
+  background: rgba(95, 255, 212, 0.06);
+  border-bottom: 1px solid rgba(95, 255, 212, 0.1);
+  padding: 10px 16px;
+  display: flex; align-items: center; gap: 6px;
+}
+.t-dot { width: 9px; height: 9px; border-radius: 50%; }
+.t-red { background: #ff5f56; }
+.t-yellow { background: #ffbd2e; }
+.t-green { background: #27c93f; }
+.terminal-label {
+  font-size: 10px; color: #3d4451; margin-left: 8px; letter-spacing: 0.1em;
+}
+.terminal-body { padding: 20px 20px 24px; }
+.t-comment { color: #2a3a30; }
+.t-prompt { color: #3d4451; }
+.t-cmd { color: #d4cfc8; }
+.t-out { color: #5fffd4; }
+.t-warn { color: #e2a23a; }
+.t-dim { color: #2a3040; }
+.t-line { margin-bottom: 2px; }
+
+.domain-info { }
+.domain-info p {
+  font-size: 15px; line-height: 1.85; color: #8a8278; margin-bottom: 20px;
+}
+.subdomain-list { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+.subdomain-item {
+  display: flex; align-items: center; gap: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.15s;
+}
+.subdomain-item:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+.subdomain-item:hover { background: rgba(95,255,212,0.025); }
+.subdomain-name {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; color: #5fffd4;
+  padding: 14px 20px; min-width: 200px;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+.subdomain-desc { font-size: 13px; color: #4a5260; padding: 14px 20px; }
+
+/* ── CONTACT ───────────────────────────────────────── */
+#contact {
+  background: rgba(95, 255, 212, 0.025);
+  border-top: 1px solid rgba(95, 255, 212, 0.08);
+  text-align: center;
+  padding: 120px 48px;
+}
+.contact-big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 8vw, 96px);
+  line-height: 1;
+  color: #f0ebe3;
+  margin-bottom: 24px;
+}
+.contact-big em {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #5fffd4;
+  font-style: italic;
+}
+.contact-sub {
+  font-size: 16px; color: #6b7280; margin-bottom: 48px; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.contact-links {
+  display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+}
+.contact-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: #5fffd4; text-decoration: none;
+  border: 1px solid rgba(95,255,212,0.25);
+  padding: 12px 24px;
+  transition: all 0.2s;
+}
+.contact-link:hover {
+  background: #5fffd4; color: #080b0f; border-color: #5fffd4;
+  transform: translateY(-2px);
+}
+
+/* ── FOOTER ────────────────────────────────────────── */
+footer {
+  padding: 24px 48px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: center; justify-content: space-between;
+  position: relative; z-index: 2;
+}
+.footer-left {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; color: #2a3040;
+}
+.footer-right {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; color: #2a3040;
+}
+
+/* ── SCROLL ANIMATIONS ─────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 20px 24px; }
+  .nav-links { gap: 20px; }
+  .hero { padding: 0 24px 60px; }
+  section { padding: 70px 24px; }
+  .about-grid, .domain-grid { grid-template-columns: 1fr; gap: 40px; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .certs-grid { grid-template-columns: 1fr 1fr; }
+  .exp-item { grid-template-columns: 1fr; gap: 8px; }
+  .exp-item::before { display: none; }
+  footer { flex-direction: column; gap: 8px; text-align: center; }
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+}
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ── NAV ─────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">kmbv.cc</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#lab">Lab</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg-text" aria-hidden="true">SECURITY</div>
+  <div class="hero-eyebrow">Cybersecurity Professional · Philippines</div>
+  <h1 class="hero-name">Kiara<br><em>Vicencio</em></h1>
+  <p class="hero-desc">
+    <strong>Attack surface analyst. Risk investigator. Systems thinker.</strong>
+    Building deep technical capability across vulnerability management,
+    and security analysis — one lab at a time.
+  </p>
+  <div class="hero-actions">
+    <a href="#experience" class="btn-primary">View my work</a>
+    <a href="#lab" class="btn-secondary">Lab notes →</a>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ── STATUS BAR ───────────────────────────────────── -->
+<div class="status-bar" aria-label="Current status">
+  <div class="status-item">
+    <div class="status-dot"></div>
+    <span class="status-label">Status</span>
+    <span class="status-val">Available for remote roles</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Location</span>
+    <span class="status-val">Philippines (PH)</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Current</span>
+    <span class="status-val">UpGuard · Remote AU</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Target</span>
+    <span class="status-val">Vulnerability Analyst · Security Analyst</span>
+  </div>
+  <div class="status-item">
+    <span class="status-label">Domain</span>
+    <span class="status-val">kmbv.cc</span>
+  </div>
+</div>
+
+<!-- ── ABOUT ────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-label">01 — Profile</div>
+  <div class="section-title">About</div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        I'm a cybersecurity professional with hands-on experience in <strong>attack surface monitoring,
+        risk validation, and technical support</strong> — currently working remotely for UpGuard in Sydney.
+      </p>
+      <p>
+        My day-to-day involves investigating exposed services, analysing SSL/TLS configurations,
+        troubleshooting authentication failures, and coordinating with engineering teams on bug tickets and
+        platform-level incidents. Before that, I conducted <em>OSINT and assisted with vulnerability assessments across 50+ financial institutions</em> at SGV & Co. (EY Philippines).
+      </p>
+      <p>
+        I'm now deepening my technical foundation through a structured 6-month lab program —
+        building proficiency in vulnerability scanning, cloud hardening, compliance frameworks,
+        and system administration to move into a dedicated analyst or sysadmin role.
+      </p>
+    </div>
+    <div class="about-facts reveal">
+      <div class="fact-row">
+        <div class="fact-key">Based</div>
+        <div class="fact-val">Philippines</div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-key">Education</div>
+        <div class="fact-val">B.S. Computer Science — Silliman University, 2023</div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-key">Certifications</div>
+        <div class="fact-val">ISC² CC · CompTIA Sec+ (in progress)</div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-key">Email</div>
+        <div class="fact-val"><a href="mailto:kiarabvicencio@gmail.com">kiarabvicencio@gmail.com</a></div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-key">LinkedIn</div>
+        <div class="fact-val"><a href="https://linkedin.com/in/kiaravicencio" target="_blank" rel="noopener">linkedin.com/in/kiaravicencio</a></div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-key">GitHub</div>
+        <div class="fact-val"><a href="https://github.com/ItchyCow" target="_blank" rel="noopener">github.com/ItchyCow</a></div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-key">Domain</div>
+        <div class="fact-val"><a href="https://kmbv.cc">kmbv.cc</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ───────────────────────────────────── -->
+<section id="experience">
+  <div class="section-label">02 — Work</div>
+  <div class="section-title">Experience</div>
+  <div class="exp-list">
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Jan 2024 — Present</div>
+        <div class="exp-company">UpGuard · Remote, AU</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Technical Support Analyst</div>
+        <p>
+          Primary technical point of contact for enterprise customers using UpGuard's cyber risk
+          and attack surface monitoring platform. Daily work involves investigating and validating
+          security alerts by analysing exposed services, SSL/TLS configurations, and web
+          infrastructure using Nmap, OpenSSL, and cURL.
+        </p>
+        <p>
+          Troubleshoot complex platform, networking, and authentication issues including SSO failures
+          and DNS misconfigurations. Monitor global cybersecurity developments and escalate high-risk
+          threats to L2 engineering teams.
+        </p>
+        <div class="exp-highlight">~95%+ CSAT · &lt;1 min first response · &lt;24h resolution SLA</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Nmap / OpenSSL / cURL / DNS</span>
+          <span class="exp-tag">SSO / Okta / Auth0 / EntraID</span>
+          <span class="exp-tag">OSINT</span>
+          <span class="exp-tag">Knowledge Management</span>
+          <span class="exp-tag">Process Improvement</span>
+          <span class="exp-tag">Attack Surface Mgmt</span>
+          <span class="exp-tag">Incident Response</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Sep — Nov 2022</div>
+        <div class="exp-company">Dashlabs.ai · Remote, PH</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Infrastructure and Security Intern</div>
+        <p>
+          Collaborated with the Infrastructure and Security Team to set up SSH Keys and SSH Certificates.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">Python</span>
+          <span class="exp-tag">Kali Linux</span>
+          <span class="exp-tag">SSH</span>
+          <span class="exp-tag">Cybersecurity</span>
+          <span class="exp-tag">Networking</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Sep — Nov 2022</div>
+        <div class="exp-company">Perti Solutions · Remote, CA</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Infrastructure and Security Intern</div>
+        <p>
+          - Maintained strong overall quality control of software by performing tests on varying platforms, adhering to reliability, performance, and customer expectation.
+          - Found and reported major bugs, and offered suggestions to senior management to enhance the overall quality of the software.
+          - Developed Low and High Fidelity Wireframes for a web application using Figma.
+          - Managed and tracked other interns' projects and reported their progress to senior management.
+          - Provided Technical Support including but not limited to setting up meetings, reviewing and creating documents for Perti and its clients, chairing meetings, and setting up demonstrations.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">Technical Support</span>
+          <span class="exp-tag">Troubleshooting</span>
+          <span class="exp-tag">Project Management</span>
+          <span class="exp-tag">Figma</span>
+          <span class="exp-tag">Black Box Testing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Jan — May 2022</div>
+        <div class="exp-company">SGV & Co. (EY) · Remote, PH</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">Cybersecurity Consulting Intern</div>
+        <p>
+          Conducted OSINT and attack surface analysis across 50+ banks and 4 government agencies,
+          identifying exposed assets and potential vulnerabilities for client security assessment
+          reports. Collaborated with senior consultants to deliver client-facing findings.
+        </p>
+        <div class="exp-tags">
+          <span class="exp-tag">OSINT</span>
+          <span class="exp-tag">Nmap</span>
+          <span class="exp-tag">DNSDumpster</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-meta">
+        <div class="exp-period">Nov 2018 — Mar 2019</div>
+        <div class="exp-company">Silliman University · Dumaguete, PH</div>
+      </div>
+      <div class="exp-body">
+        <div class="exp-role">ICT Lab Technical Support Intern</div>
+        <p>
+          Provided technical support to 30+ students and faculty. Assisted in deploying and
+          maintaining IT resources for academic use. Received Certificate of Recognition for
+          Excellence.
+        </p>
+        <div class="exp-highlight">Certificate of Recognition for Excellence</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Technical Support</span>
+          <span class="exp-tag">Network Troubleshooting</span>
+          <span class="exp-tag">Hardware</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── SKILLS ───────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-label">03 — Capabilities</div>
+  <div class="section-title">Skills</div>
+  <div class="skills-grid reveal">
+    <div class="skill-block">
+      <div class="skill-cat">Security & Analysis</div>
+      <div class="skill-items">
+        <span class="skill-item">Risk validation & investigation</span>
+        <span class="skill-item">OSINT & attack surface analysis</span>
+        <span class="skill-item">Incident response coordination</span>
+        <span class="skill-item">Pattern recognition & correlation</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-cat">Networking & Systems</div>
+      <div class="skill-items">
+        <span class="skill-item">TCP/IP · DNS · TLS/PKI</span>
+        <span class="skill-item">Windows Server · Active Directory</span>
+        <span class="skill-item">Linux (Ubuntu, Kali)</span>
+        <span class="skill-item">Authentication systems (Okta, Auth0, SSO)</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-cat">Tools</div>
+      <div class="skill-items">
+        <span class="skill-item">Nmap · OpenSSL · cURL</span>
+        <span class="skill-item">DNSDumpster · Shodan</span>
+        <span class="skill-item">n8n · Python · Bash</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-cat">Reporting & Comms</div>
+      <div class="skill-items">
+        <span class="skill-item">Technical documentation</span>
+        <span class="skill-item">Remediation tracking & SLAs</span>
+        <span class="skill-item">Knowledge base management</span>
+        <span class="skill-item">Cross-functional stakeholder comms</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-cat">Currently Learning</div>
+      <div class="skill-items">
+        <span class="skill-item">Active Directory administration & GPOs</span>
+        <span class="skill-item">Vulnerability Scanning (Nessus, OpenVAS)</span>
+        <span class="skill-item">Web app security testing (Burp Suite, OWASP Top 10)</span>
+        <span class="skill-item">CIS benchmark hardening & Lynis</span>
+        <span class="skill-item">CVSS scoring & remediation reporting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ───────────────────────────────── -->
+<section id="certifications">
+  <div class="section-label">04 — Credentials</div>
+  <div class="section-title">Certifications</div>
+  <div class="certs-grid reveal">
+    <div class="cert-card">
+      <div class="cert-status earned"><div class="cert-dot"></div> Earned</div>
+      <div class="cert-name">Certified in Cybersecurity (CC)</div>
+      <div class="cert-issuer">ISC²</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-status earned"><div class="cert-dot"></div> Earned</div>
+      <div class="cert-name">Introduction to Cybersecurity (CISCO)</div>
+      <div class="cert-issuer">ISC²</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-status earned"><div class="cert-dot"></div> Earned</div>
+      <div class="cert-name">Introduction to Networking (CISCO)</div>
+      <div class="cert-issuer">ISC²</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-status planned"><div class="cert-dot"></div>Planned</div>
+      <div class="cert-name">CompTIA Security+</div>
+      <div class="cert-issuer">CompTIA</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-status planned"><div class="cert-dot"></div> Planned</div>
+      <div class="cert-name">CompTIA Network+</div>
+      <div class="cert-issuer">CompTIA</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DOMAIN LAB ────────────────────────────────────── -->
+<section id="lab">
+  <div class="section-label">05 — Live Lab <br>Under construction ▓▓▓▓▒▒▒▒▒▒</div>
+  <div class="section-title">kmbv.cc</div>
+  <div class="domain-grid">
+    <div class="domain-terminal reveal">
+      <div class="terminal-bar">
+        <div class="t-dot t-red"></div>
+        <div class="t-dot t-yellow"></div>
+        <div class="t-dot t-green"></div>
+        <div class="terminal-label">kali@lab ~ testssl.sh kmbv.cc</div>
+      </div>
+      <div class="terminal-body">
+        <div class="t-line t-comment"># TLS/SSL security audit — kmbv.cc</div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">testssl.sh kmbv.cc</span></div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line t-out">Testing protocols (via sockets)</div>
+        <div class="t-line t-out">&nbsp;SSLv2 &nbsp;&nbsp;&nbsp;not offered ✓</div>
+        <div class="t-line t-out">&nbsp;SSLv3 &nbsp;&nbsp;&nbsp;not offered ✓</div>
+        <div class="t-line t-out">&nbsp;TLS 1 &nbsp;&nbsp;&nbsp;not offered ✓</div>
+        <div class="t-line t-out">&nbsp;TLS 1.1 &nbsp;not offered ✓</div>
+        <div class="t-line t-out">&nbsp;TLS 1.2 &nbsp;offered ✓</div>
+        <div class="t-line t-out">&nbsp;TLS 1.3 &nbsp;offered ✓ (final)</div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line t-out">Testing server defaults</div>
+        <div class="t-line t-out">&nbsp;HSTS &nbsp;&nbsp;&nbsp;&nbsp;max-age=31536000 ✓</div>
+        <div class="t-line t-out">&nbsp;DNSSEC &nbsp;&nbsp;signed ✓</div>
+        <div class="t-line t-out">&nbsp;CAA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configured ✓</div>
+        <div class="t-line">&nbsp;</div>
+        <div class="t-line t-out">Rating: <span style="color:#5fffd4;font-weight:600">A+</span></div>
+      </div>
+    </div>
+    <div class="domain-info reveal">
+      <p>
+        <strong style="color:#d4cfc8">kmbv.cc</strong> is both my portfolio domain and a live
+        security training environment — a real attack surface I configure, harden, monitor, and
+        iterate on as part of my hands-on lab program.
+      </p>
+      <p>
+        Every subdomain serves a dual purpose: a real service and a learning objective.
+        Security controls are implemented, documented, and tracked through an ASM platform.
+      </p>
+      <div class="subdomain-list">
+        <div class="subdomain-item">
+          <div class="subdomain-name">kmbv.cc</div>
+          <div class="subdomain-desc">Portfolio & home page</div>
+        </div>
+        <div class="subdomain-item">
+          <div class="subdomain-name">lab.kmbv.cc</div>
+          <div class="subdomain-desc">Lab notes & write-ups</div>
+        </div>
+        <div class="subdomain-item">
+          <div class="subdomain-name">git.kmbv.cc</div>
+          <div class="subdomain-desc">Self-hosted Gitea instance</div>
+        </div>
+        <div class="subdomain-item">
+          <div class="subdomain-name">siem.kmbv.cc</div>
+          <div class="subdomain-desc">Wazuh SIEM dashboard</div>
+        </div>
+        <div class="subdomain-item">
+          <div class="subdomain-name">mail.kmbv.cc</div>
+          <div class="subdomain-desc">SPF / DKIM / DMARC research</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ──────────────────────────────────────── -->
+<section id="contact">
+  <div class="contact-big">Let's <em>connect</em></div>
+  <p class="contact-sub">
+    Open to vulnerability analyst and security analyst roles — remote preferred,
+    particularly AU, SG, or international remote.
+  </p>
+  <div class="contact-links">
+    <a href="mailto:kiarabvicencio@gmail.com" class="contact-link">Email me</a>
+    <a href="https://linkedin.com/in/kiaravicencio" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
+    <a href="https://github.com/ItchyCow" target="_blank" rel="noopener" class="contact-link">GitHub</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────── -->
+<footer>
+  <div class="footer-left">© 2026 Kiara Marie Vicencio · kmbv.cc</div>
+  <div class="footer-right">Built by hand · Hosted on Cloudflare Pages</div>
+</footer>
+
+<script>
+// ── CURSOR ─────────────────────────────────────────
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+});
+
+function animRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+// ── SCROLL REVEAL ──────────────────────────────────
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(el => observer.observe(el));
+
+// ── NAV HIDE ON SCROLL ─────────────────────────────
+let lastY = 0;
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  if (y > lastY && y > 100) {
+    nav.style.opacity = '0';
+    nav.style.pointerEvents = 'none';
+  } else {
+    nav.style.opacity = '1';
+    nav.style.pointerEvents = 'all';
+  }
+  lastY = y;
+}, { passive: true });
+nav.style.transition = 'opacity 0.3s ease';
+</script>
+</body>
+</html>
